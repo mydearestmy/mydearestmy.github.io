@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+@font-face {
+  font-family: "Tan Pearl";
+  src: url("tan-pearl.otf") format("opentype");
+}
+.page1 {
+  background: radial-gradient(circle at top left, #eddad4, transparent 40%),
+    radial-gradient(circle at top right, #f3adb8, transparent 80%),
+    radial-gradient(circle at bottom left, #374b92, transparent 60%),
+    radial-gradient(circle at bottom right, #e0e7ed, transparent 40%);
+  background-blend-mode: screen;
+  height: 100vh;
+  display: flex;
+  font-family: "Tan Pearl", serif;
+}
+.title {
+  color: #374b92;
+  font-size: 4rem;
+  font-weight: normal;
+  font-style: italic;
+}
+.container {
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 4s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.container1 {
+  display: flex;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+  left: 20%;
+  top: 20%;
+}
+.container3 {
+  display: flex;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+  left: 20%;
+  bottom: 27%;
+}
+.container2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  right: 20%;
+  top: 35%;
+}
+.line {
+  position: absolute;
+  left: 22%;
+  top: 44.5%;
+  height: 2px;
+  width: 300px;
+  background-color: #374b92;
+}
+.website {
+  display: inline-block;
+  position: absolute;
+  bottom: 7%;
+  left: 45%;
+  padding: 10px 20px;
+  border: 2px solid #374b92;
+  border-radius: 30px;
+  font-size: 1.5rem;
+}
+a {
+  color: #374b92;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.page2 {
+  background-color: #eddad4;
+  height: 100vh;
+  display: flex;
+}
+.container4 {
+  font-family: "Tan Pearl", serif;
+  color: #374b92;
+  display: flex;
+  font-size: 4rem;
+  position: absolute;
+  left: 10%;
+  top: 130%;
+  width: 25vw;
+}
+.answer1 {
+  color: #374b92;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 10%;
+  width: 30vw;
+  top: 135%;
+}
+
+.page3 {
+  background: radial-gradient(circle at top left, #eddad4, transparent 40%),
+    radial-gradient(circle at top right, #f3adb8, transparent 80%),
+    radial-gradient(circle at bottom left, #374b92, transparent 60%),
+    radial-gradient(circle at bottom right, #e0e7ed, transparent 40%);
+  background-blend-mode: screen;
+
+  height: 100vh;
+  display: flex;
+}
