@@ -1,5 +1,8 @@
 body {
-  background-color: #710014;
+  background-color: #710014; /* 
+  Deep red background enhances the vintage vinyl theme — inspired by retro bar interiors and classic turntable aesthetics.
+*/
+  /* color pallete: https://i.pinimg.com/736x/c3/f7/1d/c3f71d000e88aa12d9e073c4f4ad9256.jpg */
 }
 @font-face {
   font-family: "Arastin";
@@ -70,6 +73,7 @@ h3 {
 }
 
 .progress-bar {
+  /* Progress bar with interactive click-to-seek function */
   width: 50%;
   height: 3px;
   background-color: #f2f1ed;

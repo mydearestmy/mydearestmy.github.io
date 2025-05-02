@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     musicName.textContent = playlist[index].textContent;
     console.log("Loading track:", src);
   }
-
+  // Switches icons when playing/pausing
   function updatePlayPauseIcon() {
     const playPauseImg = document.getElementById("play-pause-img");
     if (audioPlayer.paused) {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
     progressBarFill.style.width = `${percentage}%`;
   }
-
+  // Click-to-seek functionality on progress bar
   function seek(event) {
     const rect = progressBar.getBoundingClientRect();
     const offsetX = event.clientX - rect.left;
