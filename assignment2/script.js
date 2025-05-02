@@ -40,12 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const percentage = offsetX / rect.width;
     audioPlayer.currentTime = percentage * audioPlayer.duration;
   }
-
+  // Starts vinyl spinning + rotates tonearm (visual metaphor for engagement)
   function startVinylAnimation() {
     vinyl.style.animationPlayState = "running";
     tonearm.style.transform = "rotate(20deg)";
   }
-
+  // Stops vinyl when paused, returning to rest state
   function stopVinylAnimation() {
     vinyl.style.animationPlayState = "paused";
     tonearm.style.transform = "rotate(0deg)";
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         audioPlayer.play().catch((error) => {
           console.error("Error playing audio:", error);
         });
-        musicName.style.display = "flex";
+        musicName.style.display = "flex"; // Only show current track when audio is active
         startVinylAnimation();
       } else {
         audioPlayer.pause();
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       updatePlayPauseIcon();
     });
-
+  // Previous/Next controls enable linear navigation — ideal for curated playlists
   document
     .getElementById("previous-btn")
     .addEventListener("click", function () {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
         muteUnmuteImg.alt = "Mute Button";
       }
     });
-
+  // Repeat mode adds user control — icon change indicates state
   repeatBtn.addEventListener("click", function () {
     isRepeating = !isRepeating;
     repeatBtn.classList.toggle("active", isRepeating);
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       repeatImg.alt = "Repeat Off";
     }
   });
-
+  // Auto-play next track or loop depending on repeat mode
   audioPlayer.addEventListener("ended", function () {
     if (isRepeating) {
       audioPlayer.currentTime = 0;
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   audioPlayer.addEventListener("timeupdate", updateProgressBar);
 
   progressBar.addEventListener("click", seek);
-
+  // Enables clicking on track title to play it — intuitive interaction
   for (let i = 0; i < playlist.length; i++) {
     playlist[i].addEventListener("click", function () {
       currentTrack = i;

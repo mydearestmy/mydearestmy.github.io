@@ -12,7 +12,7 @@ body {
   width: 50vw;
   height: 100vh;
   position: relative;
-  left: 50%;
+  left: 50%; /* Offsets the visual side to create a split layout: left = visuals, right = content */
 }
 .vinyl {
   scale: 0.8;
@@ -64,7 +64,9 @@ h2 {
 h3 {
   font-family: "EB Garamond", serif;
   font-size: 1.2rem;
+  color: #f2f1ed;
 }
+
 .music-controls {
   align-items: center;
   display: flex;
@@ -107,17 +109,19 @@ h3 {
   overflow: hidden;
 }
 .music-controls button:hover {
+  /* Visual response on hover provides tactile cue without relying on sound or vibration */
   scale: 0.9;
 }
 
 #music-name {
   display: none;
+  color: #f2f1ed;
 }
 
 .vinyl {
   transition: transform 0.3s ease;
   animation: spin 3s linear infinite;
-  animation-play-state: paused;
+  animation-play-state: paused; /* Only spins when track is playing – reinforces feedback loop */
 }
 
 @keyframes spin {
@@ -130,7 +134,7 @@ h3 {
 }
 
 .tonearm {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Subtle movement of tonearm on play/pause creates satisfying micro-interaction */
 }
 .back {
   scale: 0.85;

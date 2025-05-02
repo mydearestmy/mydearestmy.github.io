@@ -1,3 +1,7 @@
+<!-- 
+  This page uses a vinyl record theme to evoke nostalgia and tactility in the media player experience.
+  The use of high-contrast imagery alongside dynamic animation was chosen to bridge retro and digital aesthetics. 
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +24,7 @@
       <img class="vinyl" src="vinyl record.png" /> <!-- I use vinyl mockup -->
       <img class="tonearm" src="tone arm.png" /> 
     </div>
-    <audio id="audioPlayer"></audio>
+    <audio id="audioPlayer"></audio> <!-- Hidden audio element – all control handled by JS for clean UX -->
     <div class="container2">
       <h1>Tracklist</h1>
       <div class="blank"></div>
@@ -30,10 +34,10 @@
       <h2 class="playlist-item"  data-src="p-hase_Water-Feature.mp3">Water Feature</h2>
       <div class="blank">
     </div>
-    <section class="title">
+    <section class="title"> <!-- Display currently playing song. Initially hidden to reduce visual noise until playback begins. -->
       <h3>Now playing: <span id="music-name"></span></h3>
     </section>
-    <section class="music-controls">
+    <section class="music-controls"> <!-- Controls designed with consistent spacing and intuitive icons to prioritize usability and recognizability. -->
         <div class="progress-bar">
           <span id="progress-bar-fill"></span>
         </div>
