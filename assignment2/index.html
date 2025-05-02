@@ -15,16 +15,18 @@
   <body>
   
     <div class="container1">
+      <img class="back" src="back.png">
       <img class="vinyl" src="vinyl record.png" />
       <img class="tonearm" src="tone arm.png" />
     </div>
+    <audio id="audioPlayer"></audio>
     <div class="container2">
       <h1>Tracklist</h1>
       <div class="blank"></div>
-      <h2>Hes</h2>
-      <h2>Dry Down</h2>
-      <h2>Leapt</h2>
-      <h2>Water Feature</h2>
+      <h2 class="playlist-item" data-src="p-hase_Hes.mp3">Hes</h2>
+      <h2 class="playlist-item"  data-src="p-hase_Dry-Down-feat-Ben-Snaath.mp3">Dry Down</h2>
+      <h2 class="playlist-item"  data-src="p-hase_Leapt.mp3">Leapt</h2>
+      <h2 class="playlist-item"  data-src="p-hase_Water-Feature.mp3">Water Feature</h2>
       <div class="blank">
     </div>
     <section class="title">
@@ -61,7 +63,7 @@
       <button id="mute-unmute-btn">
         <img
           id="mute-unmute-img"
-          src="icons8-no-audio-40.png"
+          src="icons8-audio-40.png"
           alt="Mute Button"
         />
       </button>
