@@ -20,6 +20,12 @@ function typeWriter(element, text, speed = 40) {
     '<span class="typed-text"></span><span class="cursor">|</span>';
   const typedText = element.querySelector(".typed-text");
   const cursor = element.querySelector(".cursor");
+  const typeSound = document.getElementById("typeSound");
+
+  if (typeSound) {
+    typeSound.currentTime = 0;
+    typeSound.play().catch((e) => console.log("Sound error:", e));
+  }
 
   function type() {
     if (i < text.length) {
@@ -27,7 +33,11 @@ function typeWriter(element, text, speed = 40) {
       i++;
       setTimeout(type, speed);
     } else {
-      cursor.style.display = "none"; // Hide cursor when done
+      cursor.style.display = "none";
+      if (typeSound) {
+        typeSound.pause();
+        typeSound.currentTime = 0;
+      }
     }
   }
 
@@ -60,15 +70,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const hoverBox = document.getElementById("hoverBox");
-const hoverSound = document.getElementById("hoverSound");
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".box");
+  const hoverSound = document.getElementById("hoverSound");
 
-hoverBox.addEventListener("mouseenter", () => {
-  hoverSound.currentTime = 0;
-  hoverSound.play().catch((e) => console.log("Playback error:", e));
+  boxes.forEach((box) => {
+    box.addEventListener("mouseenter", () => {
+      hoverSound.currentTime = 0;
+      hoverSound.play().catch((e) => console.log("Playback error:", e));
+    });
+
+    box.addEventListener("mouseleave", () => {
+      hoverSound.pause();
+      hoverSound.currentTime = 0;
+    });
+  });
 });
 
-hoverBox.addEventListener("mouseleave", () => {
-  hoverSound.pause();
-  hoverSound.currentTime = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const bgMusic = document.getElementById("backgroundMusic");
+  bgMusic.volume = 0.1;
 });

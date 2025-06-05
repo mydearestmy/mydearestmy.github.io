@@ -161,6 +161,10 @@ p {
 
 .card-back {
   transform: rotateY(180deg);
+  display: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .box.expanded {
