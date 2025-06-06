@@ -91,3 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const bgMusic = document.getElementById("backgroundMusic");
   bgMusic.volume = 0.1;
 });
+window.addEventListener("click", () => {
+  const bgMusic = document.getElementById("backgroundMusic");
+  if (bgMusic.paused) {
+    bgMusic.play().catch((e) => console.log("Autoplay blocked:", e));
+  }
+});
