@@ -10,6 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
+    <!-- 
+      Using VT323 — a monospace pixel-style font — to enhance the retro-futuristic aesthetic. 
+      This choice supports the theme from the Cyberpunk Memory Vault concept, 
+      drawing from ideas of old terminals or forgotten UIs.
+    -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
@@ -19,7 +24,12 @@
   <audio id="hoverSound" src="hover-sound.wav" preload="auto"></audio>
   <audio id="typeSound" src="type-sound.wav" preload="auto" loop></audio>
   <audio id="backgroundMusic" src="background-music.mp3" preload="auto" loop></audio>
-
+<!-- 
+    These three audio tracks are tied to emotional immersion: 
+    - hoverSound: light feedback to give presence to the "memory nodes" when hovered.
+    - typeSound: reinforces the fragile, personal nature of memory being typed out.
+    - backgroundMusic: continuous ambience to anchor users in the mood of digital stillness and nostalgia. 
+  -->
 
     <section class="page1">
       <h1 class="article">MEMORY VAULT</h1>
@@ -36,6 +46,11 @@
       <p>but not the weight they carried</p>
       <p>stay as long as you like.</p>
     </section>
+    <!-- 
+      Page 3 is the core interaction zone: each .box contains a "memory node"
+      represented by a glowing card. This was influenced by lusion.co and activetheory.net — 
+      where light and motion are tied to emotion and narrative depth.
+    -->
     <section class="page3">
       <div class="grid-container">
         <div class="box">
@@ -48,6 +63,12 @@
     </div>
   </div>
 </div>
+<!-- 
+          Each box is a two-sided card. Clicking flips it to reveal a memory.
+          Front: minimal image, suggesting an unreadable but glowing archive file.
+          Back: reveals an emotional memory using typewriter animation. 
+          These are written in a personal tone to feel like fragments of real lives.
+        -->
 <div class="box">
   <div class="card-inner">
     <div class="card-front">

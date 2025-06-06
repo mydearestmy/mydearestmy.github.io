@@ -7,13 +7,20 @@
   text-align: center;
   justify-content: center;
 }
+/* 
+  Main title uses a pixel-style font, large scale, and glitch animation to instantly establish a retro-futuristic, 
+  cyberpunk tone. This is the first point of emotional contact, so it had to be visually striking and thematically grounded.
+*/
 .article {
   font-family: "VT323", monospace;
   font-size: 15rem;
   color: #54efea;
   animation: glitch 2s infinite;
 }
-
+/* 
+  Glitch effect reinforces the concept of corrupted or unstable memories. 
+  The alternating shadows simulate digital interference — a metaphor for memory degradation or retrieval.
+*/
 @keyframes glitch {
   0% {
     text-shadow: 2px 0 #ec00f0, -2px 0 #600db5, 0 0 5px #54efea,
@@ -57,7 +64,10 @@ p {
     0 0 40px #00ffff, 0 0 80px #00ffff;
   animation: blink 1.5s infinite;
 }
-
+/* 
+  Soft blinking text helps convey the idea of memory fragments flickering in and out of visibility — 
+  reinforcing the themes of loss, recall, and emotional fragments.
+*/
 @keyframes blink {
   0%,
   100% {
@@ -68,7 +78,10 @@ p {
     text-shadow: none;
   }
 }
-
+/* 
+  Grid layout for memory cards. Chose a fixed-width container with generous spacing 
+  to visually separate each memory — like files stored in a digital archive.
+*/
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -78,7 +91,10 @@ p {
   height: auto;
   justify-content: center;
 }
-
+/* 
+  Individual memory nodes ("boxes") styled to glow, float, and invite interaction. 
+  Hover transform makes them feel alive — as if the memory is pulsing/reactivating when noticed.
+*/
 .box {
   background-color: #600db5;
   color: #ec00f0;
@@ -191,7 +207,10 @@ p {
 .box.expanded .card-back {
   display: flex;
 }
-
+/* 
+  Typewriter text reinforces the feeling of memory being actively reconstructed. 
+  This adds vulnerability — the words don’t just appear, they arrive one by one.
+*/
 .typewriter-text {
   font-family: "VT323", monospace;
   font-size: 2rem;
@@ -200,7 +219,9 @@ p {
   overflow-wrap: break-word;
   display: inline-block;
 }
-
+/* 
+  Blinking cursor to simulate an old terminal typing — again referencing forgotten technologies and emotional memory.
+*/
 .cursor {
   display: inline-block;
   width: 1ch;
