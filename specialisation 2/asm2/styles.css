@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+#planet {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--planet-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px var(--planet-color);
+}
+
+#moon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--moon-color);
+  cursor: grab;
+  box-shadow: 0 0 15px var(--moon-color);
+}
