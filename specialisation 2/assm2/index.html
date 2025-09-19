@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UI Progress</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Orbital Sound – UI Progress</h1>
+      <a href="https://mydearestmy.github.io/specialisation%202/prototype/" target="_blank" class="button">Open Orbital Sound Prototype</a>
+    </header>
+
+    <section>
+      <h2>Conceptual Response</h2>
+      <p>For the prompt about <strong>“spatial control + randomness Math.random(),”</strong> I’m developing <em>Orbital Sound</em>, an experimental audio interface. A small moon orbits a central planet:</p>
+      <ul>
+        <li>Distance controls playback speed</li>
+        <li>Angle sets stereo pan</li>
+      </ul>
+      <p>The goal is to make sound control feel physical and playful, rather than using standard sliders.</p>
+    </section>
+
+    <section>
+      <h2>Design References</h2>
+      <ul>
+        <li><a href="https://eyes.nasa.gov/apps/solar-system/#/home" target="_blank"><strong>NASA Eyes on Solar System</strong></a> – interactive planetary visualization and orbit metaphor.</li>
+    </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Visual Plan & System Map</h2>
+      <ul>
+        <li><strong>Planet (centre):</strong> anchor point and audio emitter</li>
+        <li><strong>Moon (draggable):</strong> user input, sends position data</li>
+        <li><strong>Math layer:</strong> calculates radius + angle from drag coordinates</li>
+        <li><strong>Audio engine:</strong> maps radius → playback rate, angle → pan</li>
+        <li><strong>Feedback layer:</strong> colour, trail or shadow to show changes</li>
+        <li><strong>Onboarding:</strong> subtle pulse or “drag here” arrow on load</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Approach</h2>
+      <ul>
+        <li>Built in HTML, CSS, and vanilla JavaScript</li>
+        <li>Audio handled via the Web Audio API</li>
+        <li><code>pointerdown</code> / <code>pointermove</code> events track the moon’s location</li>
+        <li><code>requestAnimationFrame</code> keeps orbit motion smooth</li>
+        <li>Logic separated into modules: visuals, audio, interaction</li>
+        <li>Planned upgrade: stronger easing + hint animation for onboarding</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Reflection on Week 8 Peer User Testing</h2>
+      <h3>Prompts Shown to Peers</h3>
+      <ul>
+        <li>“Was it obvious you could drag the small circle?”</li>
+        <li>“What would make the control more engaging?”</li>
+        <li>“Final thoughts or advice?”</li>
+      </ul>
+
+      <h3>What People Said</h3>
+      <ul>
+        <li>Many eventually worked out the moon was draggable, but some weren’t sure at first.</li>
+        <li>Hover cursor and colour helped, yet a clear drag cue was requested.</li>
+        <li>Several felt the centre planet’s role was unclear.</li>
+        <li>Audio feedback was too subtle; they wanted bigger sonic shifts.</li>
+        <li>Suggestions: stronger colours while dragging, shadow or trail to show pan/speed, extra circle for variety.</li>
+      </ul>
+
+      <h3>My Response & Next Steps</h3>
+      <ul>
+        <li>Add onboarding hint (pulse or arrow) on first load</li>
+        <li>Give the planet a subtle glow or label to explain its purpose</li>
+        <li>Emphasise extremes: richer colour/audio when orbiting far/near</li>
+        <li>Prototype shadow on the planet for pan and a trail to signal speed</li>
+        <li>Tweak audio layers for a more noticeable, rewarding change</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
