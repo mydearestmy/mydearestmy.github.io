@@ -3,7 +3,7 @@ const moon = document.getElementById("moon");
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
-// 🎲 Randomize colors
+// Randomize colors
 const planetHue = Math.floor(Math.random() * 360);
 const moonHue = Math.floor(Math.random() * 360);
 document.documentElement.style.setProperty(
@@ -15,16 +15,16 @@ document.documentElement.style.setProperty(
   `hsl(${moonHue}, 80%, 60%)`
 );
 
-// 🎲 Randomize oscillator type
+// Randomize oscillator type
 const waveTypes = ["sine", "square", "triangle", "sawtooth"];
 const oscType = waveTypes[Math.floor(Math.random() * waveTypes.length)];
 const baseFreq = 200 + Math.random() * 400;
 
-// 🌍 Planet center
+// Planet center
 const planetX = window.innerWidth / 2;
 const planetY = window.innerHeight / 2;
 
-// 🎵 Audio setup
+// Audio setup
 const osc = audioCtx.createOscillator();
 const panNode = audioCtx.createStereoPanner();
 const gainNode = audioCtx.createGain();
@@ -63,16 +63,16 @@ document.addEventListener("mousemove", (e) => {
   moon.style.left = `${x}px`;
   moon.style.top = `${y}px`;
 
-  // 📏 Distance from planet
+  // Distance from planet
   const dx = x - planetX;
   const dy = y - planetY;
   const distance = Math.sqrt(dx * dx + dy * dy);
 
-  // 🧭 Angle for stereo pan
+  // Angle for stereo pan
   const angle = Math.atan2(dy, dx); // radians
   const pan = Math.sin(angle); // -1 to 1
 
-  // 🎚️ Map distance to playback rate
+  // Map distance to playback rate
   const rate = 0.5 + Math.min(distance / 300, 1.5);
   osc.frequency.value = baseFreq * rate;
   panNode.pan.value = pan;
