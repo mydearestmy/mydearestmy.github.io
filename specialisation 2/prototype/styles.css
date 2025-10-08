@@ -6,24 +6,73 @@ body {
   height: 100vh;
 }
 
-#planet {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: var(--planet-color);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 30px var(--planet-color);
-}
-
 #moon {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: var(--moon-color);
   cursor: grab;
   box-shadow: 0 0 15px var(--moon-color);
+}
+
+#moon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--moon-color);
+  opacity: 0.4;
+  filter: blur(8px);
+  transform: scale(1.8);
+  pointer-events: none;
+  z-index: -1;
+  animation: trailPulse 3s ease-in-out infinite;
+}
+
+@keyframes trailPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1.8);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(2.2);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1.8);
+  }
+}
+
+#planet {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right,
+    #0b3d91 10%,
+    #1d65a6 20%,
+    #48bfe3 40%,
+    #1d65a6 60%,
+    #0b3d91 80%
+  );
+  background-size: 600% 100%;
+  background-position: 0% 50%;
+  animation: rotateNeptune 5s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px #48bfe3;
+}
+
+@keyframes rotateNeptune {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }

@@ -4,12 +4,7 @@ const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
 // Randomize colors
-const planetHue = Math.floor(Math.random() * 360);
 const moonHue = Math.floor(Math.random() * 360);
-document.documentElement.style.setProperty(
-  "--planet-color",
-  `hsl(${planetHue}, 80%, 50%)`
-);
 document.documentElement.style.setProperty(
   "--moon-color",
   `hsl(${moonHue}, 80%, 60%)`
@@ -76,4 +71,58 @@ document.addEventListener("mousemove", (e) => {
   const rate = 0.5 + Math.min(distance / 300, 1.5);
   osc.frequency.value = baseFreq * rate;
   panNode.pan.value = pan;
+});
+const canvas = document.getElementById("background-canvas");
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+for (let i = 0; i < 100; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5 + 0.5,
+    dx: (Math.random() - 0.5) * 0.2,
+    dy: (Math.random() - 0.5) * 0.2,
+  });
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+  particles.forEach((p) => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fill();
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+// hover
+document.addEventListener("mousemove", (e) => {
+  const moon = document.getElementById("moon");
+  const rect = moon.getBoundingClientRect();
+  const dx = e.clientX - (rect.left + rect.width / 2);
+  const dy = e.clientY - (rect.top + rect.height / 2);
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  if (distance < 100) {
+    moon.style.transform = `translate(${dx * 0.05}px, ${dy * 0.05}px)`;
+  } else {
+    moon.style.transform = `translate(0, 0)`;
+  }
 });
