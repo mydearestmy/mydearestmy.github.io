@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbital Sound – Reflection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>
+        Orbital Sound – Design reflection for Interaction Design and Development
+        Course A3
+      </h1>
+      <h1>By Kaitlyn Nguyen s4035889</h1>
+      <section class="links">
+        <a href="https://kaitlynprototype.netlify.app/" target="_blank"
+          >View Prototype</a
+        >
+        <a href="https://kaitlynfinalui.netlify.app/" target="_blank"
+          >View Final UI</a
+        >
+      </section>
+
+      <section class="reflection">
+        <h2>Design guiding values and how they were embodied in the UI</h2>
+        <p>
+          Orbital Sound is guided by three core values: immersion, clarity, and
+          rewarding feedback.
+
+          <strong>Immersion</strong> comes from the visual and auditory
+          environment: the glowing planet, drifting particles, soft gradient
+          background, and starry sky create a calming sense of depth and space,
+          helping users feel part of a small physical system.
+
+          <strong>Clarity</strong> is expressed through simplicity: a single
+          planet and draggable moon immediately communicate the interaction. The
+          consistent mapping of colours to sounds also supports understanding
+          and predictability.
+
+          <strong>Rewarding feedback</strong> is built into both visuals and
+          sound: dragging the moon produces immediate sonic responses and subtle
+          motion effects, while hover states and trails reinforce interaction,
+          giving users a satisfying sense of control. Together, these design
+          choices turn abstract values into tangible interface behaviour, making
+          the UI both engaging and approachable.
+        </p>
+
+        <h2>
+          Rationale in designing feedback, information design, mapping, and
+          learnability
+        </h2>
+        <p>
+          Feedback and mapping were central to the interface’s clarity and
+          learnability. The moon’s behaviour is straightforward: dragging it
+          changes the sound, and its stereo pan reflects its orbital angle. This
+          direct cause-and-effect mapping helps users understand the system
+          quickly and builds confidence.
+        </p>
+        <p>
+          Colour serves as a visual cue linked to sound: each of the seven hues
+          corresponds to a specific waveform and frequency. This predictable
+          mapping makes the system easier to learn and remember. Additional
+          cues, like hover effects and a tooltip, reinforce feedback without
+          cluttering the interface.
+        </p>
+        <p>
+          These choices directly reflect my design values: clarity drives
+          simplicity, immersion comes from the seamless interaction of visuals
+          and audio, and rewarding feedback is achieved by making each action
+          feel meaningful and responsive. Technical constraints, such as working
+          in 2D rather than 3D, also encouraged me to focus on clear, tangible
+          mappings.
+        </p>
+        <h2>Significant changes since the work-in-progress milestone</h2>
+        <p>
+          Since the work-in-progress milestone, I made several important
+          updates. Previously, the moon’s colour and sound were randomised,
+          which made the interface unpredictable. I linked them
+          deterministically so each colour now consistently produces the same
+          sound. Visually, the planet now appears to spin via a gradient
+          animation, the moon glows and becomes magnetically attracted to the
+          cursor on hover, and the background is now a starry sky, strengthening
+          the sense of space. I also added a reset button, polished the moon’s
+          trail animation, and smoothed the planet’s gradient transitions.
+          Together, these improvements made the interface more immersive,
+          cohesive, and responsive.
+        </p>
+
+        <h2>Navigation of the production timeline</h2>
+        <p>
+          I spent a lot of time early on prototyping the audio logic and
+          troubleshooting Web Audio quirks, which delayed the visual polish. I
+          had originally planned to develop visuals and audio concurrently, but
+          technical challenges forced a divergence in the schedule.
+        </p>
+        <p>
+          A key turning point was the planet’s gradient animation. I
+          underestimated how complex it would be to loop seamlessly, testing
+          multiple approaches before realising the gradient itself needed to be
+          tileable. While this took longer than expected, it produced a smooth,
+          polished visual effect.
+        </p>
+        <p>
+          Overall, this project taught me to adapt my plans when challenges
+          arise. By focusing first on the core interaction and iteratively
+          refining visuals, I maintained scope while delivering a cohesive and
+          functional UI. It reinforced the importance of prioritising essential
+          elements in self-directed work, while leaving room for refinement.
+        </p>
+
+        <h2>Design aspect i’m most proud of</h2>
+        <p>
+          I’m most proud of the planet’s gradient animation. Since the interface
+          is 2D, I couldn’t spin the planet literally, so I created a shifting
+          gradient to give the illusion of rotation. This subtle effect brings
+          the scene to life, conveys a sense of orbit, and unites the visual and
+          auditory elements. It shows how simple visual techniques can create a
+          compelling sense of motion and depth without needing complex 3D
+          models.
+        </p>
+
+        <h2>Design aspect i found most challenging</h2>
+        <p>
+          Initially, I tried to import a 3D model using Three.js to make the
+          planet rotate, but I couldn’t get the library to work correctly. As a
+          result, I shifted to a 2D approach and implemented the gradient
+          animation instead. Even then, creating a seamless illusion of motion
+          was challenging — I tested linear gradients, background-position
+          tricks, and repeating patterns before realising the gradient itself
+          had to be tileable. This process taught me a lot about CSS animation,
+          visual continuity, and adapting complex ideas into simpler, functional
+          solutions.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
