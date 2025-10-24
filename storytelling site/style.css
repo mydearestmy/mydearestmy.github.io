@@ -1,10 +1,19 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Comic Sans;
+  src: url(Ldfcomicsans-jj7l.ttf);
+}
+
 .page1 {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
-  background-image: url("images/page1.png");
+  height: 100vh;
+  background-image: url("images/bground.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,6 +31,10 @@
   text-align: center;
   color: #eeaf61;
 }
+.title h1 {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
 .title h1 span {
   opacity: 0;
   filter: blur(4px);
@@ -39,10 +52,9 @@ h1 {
   font-weight: normal;
 }
 
-.gallery {
-  margin-top: 100vh; /* Push below full-screen intro */
-  padding: 60px 20px;
-  background-color: #f0f0f0;
+.gallery1 {
+  padding: 70px 70px;
+  background-color: black;
 }
 
 .image-row {
@@ -56,8 +68,174 @@ h1 {
 }
 
 .image-row img {
-  width: 200px;
+  width: 700px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.image,
+.text {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+p {
+  color: #eeaf61;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-family: "Comic Sans";
+  text-align: center;
+}
+
+.fade-after {
+  opacity: 0;
+  transition: opacity 2s ease-out 0.4s, transform 0.6s ease-out 0.4s;
+}
+
+.scroll-fade.visible .fade-after {
+  opacity: 1;
+}
+
+.page3 {
+  background-color: black;
+  padding: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.shot5 img {
+  width: 100%;
+  max-width: 1200px; /* optional: limits image size on large screens */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.fallasleep {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.page4 {
+  min-height: 100vh;
+  background-color: black;
+  transition: background-color 0.1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.shot7 {
+  scale: 0.6;
+  border-radius: 8px;
+}
+
+.page5 {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.image-pair {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.image-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+.image-block p {
+  font-size: 1.5rem;
+  font-family: "Comic Sans";
+  color: #eeaf61;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.image-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.page6 {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 60px;
+}
+
+.page6 img {
+  scale: 2;
+  border-radius: 8px;
+}
+
+.gallery2 {
+  padding: 70px 70px;
+  background-color: white;
+}
+
+.page8 {
+  min-height: 100vh;
+  background-color: white;
+  transition: background-color 0.3s linear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 60px;
+}
+
+.page8 img.gone {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.page8 p {
+  font-size: 1.5rem;
+  font-family: "Comic Sans";
+  color: #eeaf61;
+  text-align: center;
+  margin: 0;
+  padding: 20 0px;
 }
