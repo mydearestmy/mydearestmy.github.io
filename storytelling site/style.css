@@ -222,10 +222,27 @@ p {
   align-items: center;
   justify-content: center;
   padding: 60px 60px;
+  gap: 50px;
 }
 
 .page8 img.gone {
   width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.shot16,
+.shot17,
+.shot18 {
+  width: 60%;
   max-width: 1200px;
   height: auto;
   border-radius: 8px;
@@ -237,5 +254,29 @@ p {
   color: #eeaf61;
   text-align: center;
   margin: 0;
-  padding: 20 0px;
+  padding: 0;
+}
+
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#music-toggle {
+  background-color: #eeaf61;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-family: "Comic Sans", sans-serif;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#music-toggle:hover {
+  background-color: #d98c3f;
 }

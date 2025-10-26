@@ -10,13 +10,12 @@ title.textContent = "";
 });
 
 const scrollElements = document.querySelectorAll(".scroll-fade");
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
     } else {
-      entry.target.classList.remove("visible"); // 👈 fade out when scrolling back up
+      entry.target.classList.remove("visible"); // fade out when scrolling back up
     }
   });
 });
@@ -32,31 +31,37 @@ window.addEventListener("scroll", () => {
   // Interpolate from black (0) to white (255)
   const value = Math.round(percent * 255);
   const rgb = `rgb(${value}, ${value}, ${value})`;
-
   page4.style.backgroundColor = rgb;
-
   // Optional: adjust text color for contrast
   page4.style.color = value > 128 ? "#000" : "#fff";
 });
 
 const page8 = document.querySelector(".page8");
-
 window.addEventListener("scroll", () => {
   const rect = page8.getBoundingClientRect();
   const windowHeight = window.innerHeight;
-
   const visible = Math.max(0, windowHeight - rect.top);
   const percent = Math.min(1, visible / rect.height);
-
   // Interpolate from white (255) to black (0)
   const value = Math.round(255 - percent * 255);
   const rgb = `rgb(${value}, ${value}, ${value})`;
-
   page8.style.backgroundColor = rgb;
-
   // Optional: adjust text color for contrast
   const text = page8.querySelector(".content p");
   if (text) {
     text.style.color = value < 128 ? "#fff" : "#000";
+  }
+});
+
+const music = document.getElementById("bg-music");
+const toggleBtn = document.getElementById("music-toggle");
+
+toggleBtn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    toggleBtn.textContent = "Pause Music";
+  } else {
+    music.pause();
+    toggleBtn.textContent = "Play Music";
   }
 });
